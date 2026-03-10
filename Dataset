@@ -1,0 +1,50 @@
+📊 Dataset
+
+The dataset used for training and evaluating the Landslide Detection Model contains satellite images and corresponding segmentation masks used for supervised learning.
+
+Due to GitHub's file size limitations, the dataset (576 MB) is hosted externally on Google Drive.
+
+🔗 Dataset Download Link
+
+Access the dataset here:
+
+Google Drive:
+https://drive.google.com/drive/folders/14Y99Rb-DAT0YLK8ROCfvC0QEcPEL7AMW?usp=sharing
+
+📁 Dataset Contents
+
+The dataset includes:
+
+Training Images – Satellite images used to train the model
+
+Training Masks – Ground truth landslide segmentation masks
+
+Validation Data – Used for model validation
+
+Test Data – Used for evaluating model performance
+
+📦 Dataset Format
+
+The dataset is stored in NumPy format (.npy) for efficient training.
+
+Example structure:
+
+data/
+│
+├── trainX.npy
+├── trainY.npy
+├── valX.npy
+├── valY.npy
+├── testX.npy
+└── testY.npy
+📏 Dataset Size
+
+Total Size: 576 MB
+
+Image Size: 128 × 128 pixels
+
+Channels: 4 (RGB + NIR)
+
+⚠️ Note
+
+The dataset is provided for educational and research purposes related to landslide detection and environmental monitoring.
