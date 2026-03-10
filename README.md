@@ -1,26 +1,42 @@
+🌍 Landslide Monitoring & Early Warning System
+
+An IoT and AI-based disaster monitoring system designed to detect early warning signs of landslides by analyzing environmental sensor data and satellite imagery.
+
+The system integrates ESP32-based sensor monitoring with deep learning–based satellite image analysis to improve landslide detection and risk assessment.
+
 📌 Project Overview
 
-The Landslide Monitoring & Early Warning System is an IoT-based safety system designed to monitor environmental and ground conditions in landslide-prone areas.
+The Landslide Monitoring & Early Warning System continuously monitors environmental conditions in landslide-prone areas using multiple sensors and machine learning models.
 
-The system continuously collects real-time data from multiple sensors and generates alerts when critical thresholds are exceeded.
+The system:
 
-This project is developed using ESP32 (Arduino Mode) and simulated on Wokwi.
+Collects real-time environmental data
 
-🎯 Objective
+Detects ground movement and abnormal conditions
+
+Generates early warning alerts
+
+Uses deep learning segmentation models to detect landslide-prone regions from satellite images
+
+This project is developed using ESP32 (Arduino Mode) and simulated on Wokwi, with a U-Net deep learning model for landslide detection.
+
+🎯 Objectives
 
 Detect early signs of landslides
 
-Monitor rainfall, soil moisture, pressure, and vibration
+Monitor rainfall, soil moisture, vibration, and pressure
 
-Provide real-time alert notifications
+Provide real-time alerts
 
 Display live environmental data
 
-Reduce disaster risk through early warning
+Detect landslide-prone areas from satellite imagery
+
+Reduce disaster risks through early warning systems
 
 ⚙️ System Architecture
-
-Input Sensors:
+1️⃣ IoT Monitoring System
+Input Sensors
 
 Soil Moisture Sensor
 
@@ -32,37 +48,67 @@ Pressure Sensor
 
 DHT22 (Temperature & Humidity)
 
-Processing Unit:
+Processing Unit
 
 ESP32 Microcontroller
 
-Output Components:
+Output Components
 
 OLED Display (SSD1306)
 
 Buzzer
 
-Status LEDs (Normal / Warning / Critical)
+Status LEDs
+
+🟢 Normal
+
+🟡 Warning
+
+🔴 Critical
+
+2️⃣ AI-Based Landslide Detection
+
+A U-Net Deep Learning Model is used to detect landslide areas from satellite imagery.
+
+Model Details
+
+Architecture: U-Net Convolutional Neural Network
+
+Input: Satellite images (RGB + NIR channels)
+
+Output: Binary landslide risk mask
+
+Framework: TensorFlow / Keras
 
 🔄 Working Principle
+IoT Monitoring
 
-Sensors collect environmental data continuously.
+Sensors continuously collect environmental data.
 
 ESP32 reads sensor values.
 
-Data is compared with predefined threshold limits.
+Data is compared with predefined thresholds.
 
-Based on conditions:
+Based on risk level:
 
-🟢 Normal → Green LED
+Status	Action
+🟢 Normal	Green LED
+🟡 Warning	Yellow LED
+🔴 Critical	Red LED + Buzzer
 
-🟡 Warning → Yellow LED
+Data is displayed on the OLED screen.
 
-🔴 Critical → Red LED + Buzzer
+AI Landslide Detection
 
-Data is displayed on OLED screen.
+Satellite image is uploaded.
 
-(Optional) Data can be sent to cloud for remote monitoring.
+Image is resized and normalized.
+
+The trained U-Net model predicts landslide regions.
+
+A segmentation mask highlights landslide areas.
+
+Results are visualized using overlays.
 
 📊 Alert Conditions
 Parameter	Warning Level	Critical Level
@@ -85,21 +131,24 @@ Pressure Sensor
 
 DHT22
 
-SSD1306 OLED
+SSD1306 OLED Display
 
 Buzzer
 
 LEDs
 
-Connecting Wires
+Connecting wires
 
 💻 Software Requirements
+IoT Development
+
+Arduino IDE
+
+ESP32 Board Support
 
 Wokwi Simulator
 
-Arduino IDE (ESP32 Board Support)
-
-Required Libraries:
+Required Libraries
 
 Adafruit GFX
 
@@ -111,46 +160,84 @@ Adafruit Unified Sensor
 
 DHT Sensor Library
 
-🚀 How to Run (Wokwi)
+Machine Learning
 
-Open Wokwi
+Python 3
+
+TensorFlow / Keras
+
+OpenCV
+
+NumPy
+
+Matplotlib
+
+Albumentations
+
+🚀 Running the IoT Simulation (Wokwi)
+
+Open Wokwi Simulator
 
 Select ESP32 (Arduino Mode)
 
 Add required components
 
-Paste sketch.ino
+Upload:
 
-Add diagram.json
+sketch.ino
 
-Add libraries.txt
+diagram.json
+
+libraries.txt
 
 Start simulation
 
+🤖 Running the AI Model
+
+Open Google Colab or Jupyter Notebook
+
+Upload the trained model:
+
+unet_model_enhanced.h5
+
+Upload a satellite image
+
+Run prediction script
+
+The model will generate:
+
+Predicted landslide mask
+
+Overlay visualization
+
+Saved prediction image
+
 🌐 Applications
 
-Landslide-prone hill areas
+Landslide-prone mountainous regions
 
-Road & railway slope monitoring
+Highway slope monitoring
 
-Mining regions
+Railway infrastructure safety
 
-Remote mountainous villages
+Mining areas
+
+Remote hill villages
 
 📈 Future Enhancements
 
-GSM/SMS Alert System
+GSM / SMS Alert System
 
-Cloud Dashboard Monitoring
+Cloud Monitoring Dashboard
 
 Mobile App Integration
 
-AI-based Landslide Prediction
+Real-time satellite monitoring
 
-Solar Powered System
+Solar powered monitoring stations
 
 🏆 Conclusion
 
-This project demonstrates how IoT-based real-time monitoring systems can help in disaster prevention by detecting early warning signs of landslides.
+This project demonstrates how IoT-based environmental monitoring combined with AI-powered satellite image analysis can help detect early signs of landslides and reduce disaster risks.
 
-It is cost-effective, scalable, and suitable for deployment in vulnerable regions.
+The system is cost-effective, scalable, and suitable for deployment in vulnerable regions.
